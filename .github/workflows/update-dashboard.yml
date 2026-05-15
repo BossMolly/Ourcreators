@@ -2,8 +2,8 @@ name: Daily Dashboard Update
 
 on:
   schedule:
-    - cron: '0 23 * * *'   # 매일 오전 8시 KST
-  workflow_dispatch:         # 수동 실행 가능
+    - cron: '0 23 * * *'
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -23,12 +23,12 @@ jobs:
 
       - name: Build dashboard
         env:
-          ANTHROPIC_API_KEY:      ${{ secrets.ANTHROPIC_API_KEY }}
-          OPENWEATHER_API_KEY:    ${{ secrets.OPENWEATHER_API_KEY }}
-          NAVER_CLIENT_ID:        ${{ secrets.NAVER_CLIENT_ID }}
-          NAVER_CLIENT_SECRET:    ${{ secrets.NAVER_CLIENT_SECRET }}
-          YOUTUBE_API_KEY:        ${{ secrets.YOUTUBE_API_KEY }}
-          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          ANTHROPIC_API_KEY:      ${{ secrets.CAPI }}
+          OPENWEATHER_API_KEY:    ${{ secrets.WEATHER }}
+          NAVER_CLIENT_ID:        ${{ secrets.NAPI }}
+          NAVER_CLIENT_SECRET:    ${{ secrets.NAPI }}
+          YOUTUBE_API_KEY:        ${{ secrets.YOUTUBE }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM }}
         run: python main.py
 
       - name: Commit & push updated files
@@ -41,9 +41,9 @@ jobs:
 
       - name: Deploy to Vercel
         env:
-          VERCEL_TOKEN:      ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_TOKEN:      ${{ secrets.VERCELTOKEN }}
+          VERCEL_ORG_ID:     ${{ secrets.VERCELTEAMID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCELPROJECT }}
         run: |
           npm install -g vercel
           vercel --prod --token=$VERCEL_TOKEN --yes
