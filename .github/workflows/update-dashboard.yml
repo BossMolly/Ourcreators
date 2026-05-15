@@ -2,8 +2,8 @@ name: Daily Dashboard Update
 
 on:
   schedule:
-    - cron: '0 23 * * *'
-  workflow_dispatch:
+    - cron: '0 23 * * *'   # 매일 오전 8시 KST
+  workflow_dispatch:         # 수동 실행 가능
 
 jobs:
   build-and-deploy:
@@ -31,7 +31,7 @@ jobs:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
         run: python main.py
 
-      - name: Commit updated files
+      - name: Commit & push updated files
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
