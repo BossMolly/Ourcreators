@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>24/7 × Daily Market Intelligence</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -19,16 +19,14 @@ body{font-family:'DM Sans',sans-serif;font-weight:400;color:#1a1a1a;background:#
 .hd-brand{font-family:'DM Serif Display',serif;font-size:16px;letter-spacing:.06em;color:#111;white-space:nowrap;}
 .hd-brand em{font-style:italic;color:#999;font-size:11px;font-family:'DM Sans',sans-serif;font-weight:300;letter-spacing:.04em;margin-left:8px;}
 .hd-right{display:flex;align-items:center;gap:10px;font-size:11px;color:#aaa;font-weight:300;letter-spacing:.03em;flex-wrap:wrap;justify-content:flex-end;}
-.hd-date{display:none;}
-.hd-sep{display:none;}
-.hd-upd{display:none;}
+.hd-date{display:none;}.hd-sep{display:none;}.hd-upd{display:none;}
 .wpill{display:flex;align-items:center;gap:4px;background:#f5f3ee;border:.5px solid #e0ddd6;border-radius:20px;padding:4px 10px;font-size:11px;color:#666;white-space:nowrap;}
 
 /* ── BODY ── */
 .body{padding:14px 16px;display:flex;flex-direction:column;gap:12px;}
 
 /* ── CARD ── */
-.card{background:#fff;border:.5px solid #e4e1da;border-radius:12px;padding:16px 16px;}
+.card{background:#fff;border:.5px solid #e4e1da;border-radius:12px;padding:16px;}
 .clabel{font-size:10px;font-weight:500;letter-spacing:.1em;color:#bbb;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:5px;}
 .clabel i{font-size:12px;}
 
@@ -49,13 +47,13 @@ body{font-family:'DM Sans',sans-serif;font-weight:400;color:#1a1a1a;background:#
 .it-price{background:#fff3e0;color:#b06000;}
 .it-brand{background:#f5f3ee;color:#7a6a50;}
 
-/* ── WEATHER STRIP ── */
+/* ── WEATHER ── */
 .wx-strip{background:#fff;border:.5px solid #e4e1da;border-radius:12px;padding:16px;}
 .wx-top{display:flex;align-items:flex-start;gap:16px;padding-bottom:14px;margin-bottom:14px;border-bottom:.5px solid #f2f0eb;}
 .wx-today{flex-shrink:0;}
 .wx-temp{font-family:'DM Serif Display',serif;font-size:38px;color:#333;line-height:1;}
 .wx-desc{font-size:11px;color:#aaa;font-weight:300;margin-top:3px;}
-.wx-weekly{flex:1;display:flex;flex-direction:column;gap:0;}
+.wx-weekly{flex:1;}
 .wx-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .wx-col-label{font-size:10px;font-weight:500;letter-spacing:.1em;color:#bbb;text-transform:uppercase;margin-bottom:8px;}
 .wx-item-row{display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:.5px solid #f5f3ee;}
@@ -65,18 +63,29 @@ body{font-family:'DM Sans',sans-serif;font-weight:400;color:#1a1a1a;background:#
 .wx-item-why{font-size:11px;color:#aaa;font-weight:300;}
 
 /* ── TABS ── */
-.tab-wrap{display:flex;gap:0;border-bottom:.5px solid #eceae4;margin-bottom:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.tab-wrap{display:flex;border-bottom:.5px solid #eceae4;margin-bottom:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
 .tab-wrap::-webkit-scrollbar{display:none;}
 .tab-btn{font-size:11px;font-weight:500;letter-spacing:.03em;padding:7px 13px;color:#bbb;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;border-bottom:2px solid transparent;white-space:nowrap;-webkit-tap-highlight-color:transparent;}
 .tab-btn.active{color:#222;border-bottom-color:#222;}
 .tab-panel{display:none;}
 .tab-panel.active{display:block;}
 
-/* ── PLATFORM TABLE → CARD LIST on mobile ── */
-.ptable{display:none;}
-.ptable th,.ptable td{font-size:12px;padding:8px;border-bottom:.5px solid #f5f3ee;vertical-align:middle;color:#333;}
+/* ── PLATFORM TABLE (hidden mobile, shown tablet+) ── */
+.ptable{display:none;width:100%;border-collapse:collapse;}
+.ptable th{font-size:10px;font-weight:500;letter-spacing:.07em;color:#bbb;text-transform:uppercase;padding:6px 8px;border-bottom:.5px solid #eceae4;text-align:left;}
+.ptable td{font-size:12px;padding:8px;border-bottom:.5px solid #f5f3ee;vertical-align:middle;color:#333;}
 .ptable tr:last-child td{border-bottom:none;}
-.ptable th{font-size:10px;font-weight:500;letter-spacing:.07em;color:#bbb;text-transform:uppercase;border-bottom:.5px solid #eceae4;}
+.ptable tr:hover td{background:#fafaf8;}
+
+/* ── PLATFORM CARDS (mobile only) ── */
+.pcard-list{display:flex;flex-direction:column;gap:8px;}
+.pcard{background:#fafaf8;border:.5px solid #eceae4;border-radius:8px;padding:11px 13px;}
+.pcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px;}
+.pcard-name{font-size:12.5px;font-weight:500;color:#222;line-height:1.35;}
+.pcard-brand{font-size:11px;color:#aaa;font-weight:300;margin-top:1px;}
+.pcard-issue{font-size:11.5px;color:#666;line-height:1.5;font-weight:300;}
+
+/* ── SIGNAL TAGS ── */
 .ptag{font-size:10px;font-weight:500;letter-spacing:.03em;padding:2px 7px;border-radius:4px;display:inline-block;}
 .ptag-new{background:#e8f4ed;color:#2d7a4a;}
 .ptag-up{background:#fdf0e6;color:#c46a1a;}
@@ -87,14 +96,6 @@ body{font-family:'DM Sans',sans-serif;font-weight:400;color:#1a1a1a;background:#
 .ptag-hot{background:#fff0e6;color:#d44800;}
 .brand-sm{font-size:11px;color:#aaa;font-weight:300;margin-top:1px;}
 .issue-txt{font-size:11.5px;color:#555;line-height:1.45;}
-
-/* Mobile platform cards (replaces table) */
-.pcard-list{display:flex;flex-direction:column;gap:8px;}
-.pcard{background:#fafaf8;border:.5px solid #eceae4;border-radius:8px;padding:11px 13px;}
-.pcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px;}
-.pcard-name{font-size:12.5px;font-weight:500;color:#222;line-height:1.35;}
-.pcard-brand{font-size:11px;color:#aaa;font-weight:300;margin-top:1px;}
-.pcard-issue{font-size:11.5px;color:#666;line-height:1.5;font-weight:300;}
 
 /* ── BOTTOM GRID ── */
 .bottom-grid{display:flex;flex-direction:column;gap:12px;}
@@ -115,7 +116,7 @@ body{font-family:'DM Sans',sans-serif;font-weight:400;color:#1a1a1a;background:#
 .b-ig{background:#f3eefa;color:#7438c2;}
 .ct-title{font-size:12.5px;font-weight:500;color:#222;line-height:1.4;margin-bottom:3px;}
 .ct-sum{font-size:11.5px;color:#888;line-height:1.5;font-weight:300;}
-.ct-link{font-size:10.5px;color:#7438c2;font-weight:500;text-decoration:none;letter-spacing:.02em;margin-top:5px;display:inline-flex;align-items:center;gap:3px;}
+.ct-link{font-size:10.5px;color:#7438c2;font-weight:500;text-decoration:none;margin-top:5px;display:inline-flex;align-items:center;gap:3px;}
 .ct-stat{font-size:11px;color:#ccc;flex-shrink:0;text-align:right;font-weight:300;min-width:52px;}
 
 /* ── KEYWORDS ── */
@@ -142,11 +143,9 @@ body{font-family:'DM Sans',sans-serif;font-weight:400;color:#1a1a1a;background:#
 .act-d{font-size:11px;color:#999;font-weight:300;line-height:1.45;}
 
 /* ── FOOTER ── */
-.footer{padding:12px 16px;border-top:.5px solid #e4e1da;font-size:10px;color:#ccc;font-weight:300;letter-spacing:.02em;background:#fff;text-align:center;line-height:1.7;}
+.footer{padding:12px 16px;border-top:.5px solid #e4e1da;font-size:10px;color:#ccc;font-weight:300;background:#fff;text-align:center;line-height:1.7;}
 
-/* ══════════════════════════════════════════
-   TABLET  ≥ 640px
-══════════════════════════════════════════ */
+/* ══ TABLET ≥640px ══ */
 @media(min-width:640px){
   .body{padding:18px 22px;gap:14px;}
   .card{padding:18px 20px;}
@@ -154,28 +153,24 @@ body{font-family:'DM Sans',sans-serif;font-weight:400;color:#1a1a1a;background:#
   .hd-date{display:inline;}
   .hd-sep{display:inline;}
   .ins-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-  .wx-top{gap:20px;}
   .wx-cols{grid-template-columns:1fr 1fr 1fr;}
-  .ptable{display:table;width:100%;border-collapse:collapse;}
+  .ptable{display:table;}
   .pcard-list{display:none;}
   .bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   .footer{display:flex;justify-content:space-between;align-items:center;padding:12px 22px;text-align:left;}
 }
 
-/* ══════════════════════════════════════════
-   DESKTOP  ≥ 1024px
-══════════════════════════════════════════ */
+/* ══ DESKTOP ≥1024px ══ */
 @media(min-width:1024px){
   .body{padding:22px 28px;gap:16px;}
   .card{padding:20px 22px;}
   .hd{padding:14px 28px;}
   .hd-brand{font-size:18px;}
   .hd-upd{display:inline;}
-  .hd-sep2{display:inline;}
   .ins-row{grid-template-columns:1fr 1fr 1fr;}
   .wx-strip{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:24px;align-items:start;padding:18px 22px;}
   .wx-top{display:contents;}
-  .wx-today{padding-right:0;border-right:none;}
+  .wx-today{flex-shrink:0;}
   .wx-weekly{display:contents;}
   .wx-cols{display:contents;}
   .footer{padding:13px 28px;}
@@ -190,7 +185,7 @@ body{font-family:'DM Sans',sans-serif;font-weight:400;color:#1a1a1a;background:#
     <span>2026년 05월 15일 (Fri)</span>
     <div class="wpill"><i class="ti ti-cloud-rain"></i>&nbsp;서울 · 18°C · 흐리고 비</div>
     <span style="color:#e0ddd6">|</span>
-    <span>01:37 업데이트</span>
+    <span>22:45 업데이트</span>
   </div>
 </div>
 
@@ -218,18 +213,19 @@ body{font-family:'DM Sans',sans-serif;font-weight:400;color:#1a1a1a;background:#
     </div></div>
 </div>
   <div class="wx-strip">
-  <div class="wx-top"><div class="wx-today">
+  <div class="wx-today">
     <div class="wx-temp">18°</div>
     <div class="wx-desc">서울 · 흐리고 비<br>체감 15°C</div>
   </div>
-  <div class="wx-weekly"><div class="wx-col-label">이번 주 날씨</div><div class="wx-item-row"><span class="wx-dot" style="background:#8bbfe8"></span><span class="wx-item-name">Thu 18° 비</span><span class="wx-item-why">나일론·방수 수요↑</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#f0c070"></span><span class="wx-item-name">Fri 22° 맑음</span><span class="wx-item-why">린넨·코튼 전환</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#f0c070"></span><span class="wx-item-name">Sat 24° 맑음</span><span class="wx-item-why">반소매·셋업 수요</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#b0d0a0"></span><span class="wx-item-name">Sun 20° 구름</span><span class="wx-item-why">레이어드룩 유지</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#b0c0e8"></span><span class="wx-item-name">Mon 19° 흐림</span><span class="wx-item-why">기온 변동 대비</span></div></div></div></div>
-  <div class="wx-cols"><div><div class="wx-col-label">내일 추천 아이템</div><div class="wx-item-row"><span class="wx-dot" style="background:#b0d890"></span><span class="wx-item-name">린넨 셋업</span><span class="wx-item-why">기온 대응</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#b0d890"></span><span class="wx-item-name">코튼 반소매</span><span class="wx-item-why">반팔 시즌</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#b0d890"></span><span class="wx-item-name">크롭 트렌치</span><span class="wx-item-why">기온차 레이어</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#b0d890"></span><span class="wx-item-name">라이트 스니커즈</span><span class="wx-item-why">야외활동 증가</span></div></div><div>
+  <div><div class="wx-col-label">이번 주 날씨</div><div class="wx-item-row"><span class="wx-dot" style="background:#8bbfe8"></span><span class="wx-item-name">Thu 18° 비</span><span class="wx-item-why">나일론·방수 수요↑</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#f0c070"></span><span class="wx-item-name">Fri 22° 맑음</span><span class="wx-item-why">린넨·코튼 전환</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#f0c070"></span><span class="wx-item-name">Sat 24° 맑음</span><span class="wx-item-why">반소매·셋업 수요</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#b0d0a0"></span><span class="wx-item-name">Sun 20° 구름</span><span class="wx-item-why">레이어드룩 유지</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#b0c0e8"></span><span class="wx-item-name">Mon 19° 흐림</span><span class="wx-item-why">기온 변동 대비</span></div></div>
+  <div><div class="wx-col-label">내일 추천 아이템</div><div class="wx-item-row"><span class="wx-dot" style="background:#b0d890"></span><span class="wx-item-name">린넨 셋업</span><span class="wx-item-why">기온 대응</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#b0d890"></span><span class="wx-item-name">코튼 반소매</span><span class="wx-item-why">반팔 시즌</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#b0d890"></span><span class="wx-item-name">크롭 트렌치</span><span class="wx-item-why">기온차 레이어</span></div><div class="wx-item-row"><span class="wx-dot" style="background:#b0d890"></span><span class="wx-item-name">라이트 스니커즈</span><span class="wx-item-why">야외활동 증가</span></div></div>
+  <div>
     <div class="wx-col-label">주간 핵심 시그널</div>
     <div class="wx-item-row"><span class="wx-dot" style="background:#c0a0e0"></span><span class="wx-item-name">셋업 수요</span><span class="wx-item-why">무신사 기획전 연계</span></div>
     <div class="wx-item-row"><span class="wx-dot" style="background:#c0a0e0"></span><span class="wx-item-name">Y2K 무드</span><span class="wx-item-why">SNS 급상승 지속</span></div>
     <div class="wx-item-row"><span class="wx-dot" style="background:#c0a0e0"></span><span class="wx-item-name">레이어드룩</span><span class="wx-item-why">기온 변동 주간</span></div>
     <div class="wx-item-row"><span class="wx-dot" style="background:#c0a0e0"></span><span class="wx-item-name">워시드 소재</span><span class="wx-item-why">커뮤니티 언급 급증</span></div>
-  </div></div>
+  </div>
 </div>
   <div class="card">
   <div class="clabel"><i class="ti ti-building-store"></i> 플랫폼별 주요 상품 · 이슈</div>
@@ -467,360 +463,7 @@ body{font-family:'DM Sans',sans-serif;font-weight:400;color:#1a1a1a;background:#
   <div class="ba-row">
       <div class="ba-handle">@247series</div>
       <div class="ba-summary">루나라이트 재킷 착샷 릴스 업로드, 좋아요 2,841 · 댓글 134 — 저장율 높음</div>
-      <div class="ba-time">3h ago
-<div class="pcard-list">
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">워시드 린넨 셋업</div><div class="pcard-brand">디스이즈네버댓</div></div>
-      <span class="ptag ptag-up">급등↑</span>
-    </div>
-    <div class="pcard-issue">셋업 기획전 메인 노출. 24시간 조회 4.2만, 장바구니 1,800건 돌파.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">오버사이즈 피그먼트 후드</div><div class="pcard-brand">스탠다드화이트</div></div>
-      <span class="ptag ptag-sold">품절</span>
-    </div>
-    <div class="pcard-issue">S·M 사이즈 품절, XL만 잔여. 재입고 문의 댓글 200건 이상.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">워크웨어 와이드 팬츠</div><div class="pcard-brand">커버낫</div></div>
-      <span class="ptag ptag-new">신상품</span>
-    </div>
-    <div class="pcard-issue">출시 3시간 내 좋아요 620건. 워크코어 키워드 트래픽 유입.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">나일론 집업 재킷</div><div class="pcard-brand">폴로 랄프로렌</div></div>
-      <span class="ptag ptag-drop">가격↓</span>
-    </div>
-    <div class="pcard-issue">정가 대비 22% 인하. 검색 유입 +67% 급증.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">크롭 데님 트러커</div><div class="pcard-brand">리바이스</div></div>
-      <span class="ptag ptag-trend">트렌딩</span>
-    </div>
-    <div class="pcard-issue">스냅 착샷 48시간 내 340건. Y2K 해시태그 연동 급상승.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">테크 나일론 카고 팬츠</div><div class="pcard-brand">에스피오나지</div></div>
-      <span class="ptag ptag-up">급등↑</span>
-    </div>
-    <div class="pcard-issue">패션갤러리 유저픽 선정 후 조회 2.1만→4.8만, 2배 증가.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">뉴 스탠다드 티셔츠 3팩</div><div class="pcard-brand">무신사 스탠다드</div></div>
-      <span class="ptag ptag-hot">HOT</span>
-    </div>
-    <div class="pcard-issue">랭킹 1위 3주 연속. 리뷰 4,200건, 평점 4.9.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">스트링 숏츠</div><div class="pcard-brand">나이키</div></div>
-      <span class="ptag ptag-new">신상품</span>
-    </div>
-    <div class="pcard-issue">러닝·레저 복합 수요 겨냥. 운동복 카테고리 48시간 조회 1위.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">빈티지 워싱 데님</div><div class="pcard-brand">아크네스튜디오</div></div>
-      <span class="ptag ptag-trend">트렌딩</span>
-    </div>
-    <div class="pcard-issue">FM코리아 갤러리 언급 급증. 국내 입고 희소성 게시물 바이럴.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">슬러브 코튼 반팔</div><div class="pcard-brand">올드 조</div></div>
-      <span class="ptag ptag-watch">모니터링</span>
-    </div>
-    <div class="pcard-issue">가격 인상 후 가성비 저하 리뷰 증가. 부정 반응 모니터링 필요.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">린넨 드로스트링 팬츠</div><div class="pcard-brand">스튜디오 톰보이</div></div>
-      <span class="ptag ptag-up">급등↑</span>
-    </div>
-    <div class="pcard-issue">에디터 Pick 메인 배너 노출 후 전환율 2.1배. 저장수 3,800건.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">Y2K 크롭 집업 후드</div><div class="pcard-brand">마뗑킴</div></div>
-      <span class="ptag ptag-trend">트렌딩</span>
-    </div>
-    <div class="pcard-issue">인플루언서 착샷 연동 후 48시간 조회 6.7만.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">실크 블렌드 미디 스커트</div><div class="pcard-brand">로우클래식</div></div>
-      <span class="ptag ptag-sold">품절</span>
-    </div>
-    <div class="pcard-issue">아이보리·블랙 전 사이즈 품절. 재입고 알림 1,200건 대기.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">오버사이즈 체크 셔츠</div><div class="pcard-brand">포터리</div></div>
-      <span class="ptag ptag-new">신상품</span>
-    </div>
-    <div class="pcard-issue">2025 SS 신규 컬러 추가 입고. 뉴스레터 특집 소개 예정.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">테일러드 크롭 자켓</div><div class="pcard-brand">앤아더스토리즈</div></div>
-      <span class="ptag ptag-drop">가격↓</span>
-    </div>
-    <div class="pcard-issue">시즌오프 15% 할인. 검색 유입 +41%, 구매 전환 +28%.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">라탄 미니 버킷백</div><div class="pcard-brand">마르지엘라</div></div>
-      <span class="ptag ptag-hot">HOT</span>
-    </div>
-    <div class="pcard-issue">29CM 주간 액세서리 베스트 1위. 인스타 저장 7,100건.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">슬림 드로스트링 쇼츠</div><div class="pcard-brand">세터</div></div>
-      <span class="ptag ptag-up">급등↑</span>
-    </div>
-    <div class="pcard-issue">스포티즘 트렌드 수혜. '쇼츠' 키워드 클릭수 전주 대비 +55%.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">세미글로시 메리제인</div><div class="pcard-brand">페디</div></div>
-      <span class="ptag ptag-new">신상품</span>
-    </div>
-    <div class="pcard-issue">슈즈 카테고리 신규 등록, 출시 당일 조회 1위.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">무드 캔들 협업 세트</div><div class="pcard-brand">조말론 × 디스이즈</div></div>
-      <span class="ptag ptag-trend">트렌딩</span>
-    </div>
-    <div class="pcard-issue">패션+라이프 컬래버. 신규 카테고리 초기 반응 긍정적.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">쿨터치 반팔 니트</div><div class="pcard-brand">아더에러</div></div>
-      <span class="ptag ptag-watch">모니터링</span>
-    </div>
-    <div class="pcard-issue">소재 퀄리티 언급 혼재. 구매자 Q&A 증가, 공식 응대 필요.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">워시드 데님 와이드</div><div class="pcard-brand">솔리드옴므</div></div>
-      <span class="ptag ptag-up">급등↑</span>
-    </div>
-    <div class="pcard-issue">주간 랭킹 1위. 20대 남성 워시드 데님 검색 비중 +34%.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">스트라이프 오버사이즈 셔츠</div><div class="pcard-brand">커스텀멜로우</div></div>
-      <span class="ptag ptag-trend">트렌딩</span>
-    </div>
-    <div class="pcard-issue">스타일링 탭 착장 게시 65건. 해시태그 SNS 확산 중.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">반집업 테크 스웨트</div><div class="pcard-brand">인사일런스</div></div>
-      <span class="ptag ptag-new">신상품</span>
-    </div>
-    <div class="pcard-issue">익스클루시브 출시. 한정 100피스, 2시간 내 50% 소진.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">크루넥 피그먼트 스웻</div><div class="pcard-brand">엔에프엘</div></div>
-      <span class="ptag ptag-sold">품절</span>
-    </div>
-    <div class="pcard-issue">블랙·그레이 품절. 재입고 요청 SNS 댓글 다수.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">미니멀 캔버스 토트백</div><div class="pcard-brand">마가린핑거스</div></div>
-      <span class="ptag ptag-hot">HOT</span>
-    </div>
-    <div class="pcard-issue">액세서리 베스트셀러. '학생 가방' 키워드로 틱톡 바이럴.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">뉴트럴 와이드 치노</div><div class="pcard-brand">브랜디드</div></div>
-      <span class="ptag ptag-drop">가격↓</span>
-    </div>
-    <div class="pcard-issue">시즌 마감 프로모션 10% 추가 할인. 잔여 재고 소진 목표.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">에코 울 크루넥 니트</div><div class="pcard-brand">얼킨</div></div>
-      <span class="ptag ptag-trend">트렌딩</span>
-    </div>
-    <div class="pcard-issue">친환경 소재 관심으로 상세 페이지 체류 시간 +82%.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">슬립온 스니커즈</div><div class="pcard-brand">반스</div></div>
-      <span class="ptag ptag-up">급등↑</span>
-    </div>
-    <div class="pcard-issue">슈즈 카테고리 급상승. 하루 조회 2.4만, 전주 대비 2배.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">라이트 나일론 쇼퍼백</div><div class="pcard-brand">스모크원</div></div>
-      <span class="ptag ptag-new">신상품</span>
-    </div>
-    <div class="pcard-issue">신규 컬러 3종 추가. 이번 시즌 최다 컬러 라인업.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">테이퍼드 조거 팬츠</div><div class="pcard-brand">네스티팬시</div></div>
-      <span class="ptag ptag-watch">모니터링</span>
-    </div>
-    <div class="pcard-issue">경쟁 상품 가격 인하 후 검색 클릭 감소. 재검토 권장.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">에어포스1 '07 화이트</div><div class="pcard-brand">나이키</div></div>
-      <span class="ptag ptag-sold">품절임박</span>
-    </div>
-    <div class="pcard-issue">즉시구매가 139,000원. 리셀 프리미엄 +18%. 250·260 소량 잔여.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">뉴발란스 1906R 그레이</div><div class="pcard-brand">뉴발란스</div></div>
-      <span class="ptag ptag-up">리셀↑</span>
-    </div>
-    <div class="pcard-issue">최근 7일 리셀가 +22% 급등. 인스타 릴스 바이럴 후 수요 폭발.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">아디다스 삼바 OG 화이트</div><div class="pcard-brand">아디다스</div></div>
-      <span class="ptag ptag-hot">HOT</span>
-    </div>
-    <div class="pcard-issue">거래량 1위 3주 연속. 프리미엄 소폭 하락, 정가 대비 +8%.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">사카이 × 나이키 와플</div><div class="pcard-brand">사카이 × 나이키</div></div>
-      <span class="ptag ptag-trend">트렌딩</span>
-    </div>
-    <div class="pcard-issue">재발매 루머로 관심 급증. 48시간 내 관심 등록 3,200건 추가.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">스톤아일랜드 패치 후디</div><div class="pcard-brand">스톤아일랜드</div></div>
-      <span class="ptag ptag-up">리셀↑</span>
-    </div>
-    <div class="pcard-issue">국내 정식 입고 소진 후 리셀 상승. 정품 인증 요청 급증.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">뉴진스 × 메종키츠네</div><div class="pcard-brand">메종키츠네</div></div>
-      <span class="ptag ptag-trend">트렌딩</span>
-    </div>
-    <div class="pcard-issue">아이돌 콜라보 효과. 출시 예정 공지 후 관심 등록 1만 돌파.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">오프화이트 캠프칼라 셔츠</div><div class="pcard-brand">오프화이트</div></div>
-      <span class="ptag ptag-drop">가격↓</span>
-    </div>
-    <div class="pcard-issue">리셀가 하락세, 전고점 대비 -31%. 시즌 오버 재고 유입.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">에르메스 에블린 미니</div><div class="pcard-brand">에르메스</div></div>
-      <span class="ptag ptag-up">리셀↑</span>
-    </div>
-    <div class="pcard-issue">명품 리셀 카테고리 1위. 원화 강세에도 리셀가 유지.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">나이키 조던1 로우 OG</div><div class="pcard-brand">조던</div></div>
-      <span class="ptag ptag-new">신규상장</span>
-    </div>
-    <div class="pcard-issue">KREAM 신규 거래 시작. 즉시구매가 178,000원.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">크롬하츠 실버링</div><div class="pcard-brand">크롬하츠</div></div>
-      <span class="ptag ptag-watch">모니터링</span>
-    </div>
-    <div class="pcard-issue">짝퉁 의심 거래 신고 증가. 정품 검수 강화 공지 예정.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">5월 셋업 코디 추천</div><div class="pcard-brand">패션 브랜디드카페</div></div>
-      <span class="ptag ptag-up">검색급등</span>
-    </div>
-    <div class="pcard-issue">네이버 쇼핑 '셋업' 검색 전주 대비 +62%. 관련 게시물 200건 이상.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">24/7 시리즈 어때요</div><div class="pcard-brand">FM코리아 패션갤</div></div>
-      <span class="ptag ptag-trend">브랜드언급</span>
-    </div>
-    <div class="pcard-issue">긍정 반응 우세(원단 퀄리티 60%). 가격 저항 20%, 사이즈 문의 20%.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">무신사 vs 29CM 비교글</div><div class="pcard-brand">네이버 블로그</div></div>
-      <span class="ptag ptag-hot">HOT</span>
-    </div>
-    <div class="pcard-issue">플랫폼 비교 콘텐츠 검색 유입 급증. SEO 기회.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">봄 트렌치코트 추천</div><div class="pcard-brand">파워블로거</div></div>
-      <span class="ptag ptag-up">검색급등</span>
-    </div>
-    <div class="pcard-issue">주간 뷰 21만 달성. 핏별 트렌치 키워드 쇼핑 클릭 +38%.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">Y2K 빈티지 코디법</div><div class="pcard-brand">인플루언서 콘텐츠</div></div>
-      <span class="ptag ptag-trend">트렌딩</span>
-    </div>
-    <div class="pcard-issue">인플루언서 패션 분야 주간 베스트. 10~20대 타깃 유입 집중.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">나일론 재킷 방수 테스트</div><div class="pcard-brand">유튜브→네이버 유입</div></div>
-      <span class="ptag ptag-new">신규유입</span>
-    </div>
-    <div class="pcard-issue">유튜브 영상 후 네이버 쇼핑 연동 유입 급증.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">린넨 소재 관리법</div><div class="pcard-brand">네이버 지식iN</div></div>
-      <span class="ptag ptag-watch">모니터링</span>
-    </div>
-    <div class="pcard-issue">세탁 후 변형 관련 Q&A 증가. 브랜드 공식 가이드 발행 권장.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">가성비 패션 아이템 TOP10</div><div class="pcard-brand">카페 인기글</div></div>
-      <span class="ptag ptag-hot">HOT</span>
-    </div>
-    <div class="pcard-issue">가성비 키워드 검색 증가. 24/7 미포함 — SEO 최적화 필요.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">스타일 공유 챌린지</div><div class="pcard-brand">네이버 숏폼</div></div>
-      <span class="ptag ptag-trend">트렌딩</span>
-    </div>
-    <div class="pcard-issue">네이버 클립 패션 챌린지 참여 급증. 브랜드 공식 참여 효과 예상.</div>
-  </div>
-  <div class="pcard">
-    <div class="pcard-top">
-      <div><div class="pcard-name">아이돌 착용 아이템 검색</div><div class="pcard-brand">네이버 실시간</div></div>
-      <span class="ptag ptag-up">검색급등</span>
-    </div>
-    <div class="pcard-issue">뮤직비디오 공개 후 특정 아이템 조회 집중 패턴.</div>
-  </div>
-</div>
-</div>
+      <div class="ba-time">3h ago</div>
     </div><div class="ba-row">
       <div class="ba-handle">@musinsa_official</div>
       <div class="ba-summary">5월 셋업 기획전 스토리 공지, 스토리 노출 8만 · 링크 클릭율 4.2%</div>
@@ -954,7 +597,7 @@ body{font-family:'DM Sans',sans-serif;font-weight:400;color:#1a1a1a;background:#
 <div class="footer">
   <span>수집 범위: 무신사 · 29CM · 4910 · KREAM · Instagram · YouTube · 네이버 카페 · FM코리아</span>
   <span style="color:#ddd">|</span>
-  <span>마지막 업데이트: 2026-05-15 01:37</span>
+  <span>마지막 업데이트: 2026-05-15 22:45</span>
 </div>
 
 <script>
