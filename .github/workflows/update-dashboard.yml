@@ -2,8 +2,12 @@ name: Daily Dashboard Update
 
 on:
   schedule:
-    - cron: '0 23 * * *'
-  workflow_dispatch:
+    - cron: '0 23 * * *'   # 매일 오전 8시 KST (백업용 유지)
+  workflow_dispatch:         # 수동 실행
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'            # data 폴더에 변경이 생길 때만 트리거
 
 jobs:
   build-and-deploy:
